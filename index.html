@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Registration</title>
+</head>
+<body>
+	<h1>Registration Form</h1>
+	<hr>
+	<form method="post"autocomplete="off"name="google-sheet">
+		<fieldset>
+			<legend>Personal info:</legend>
+			<label for="fname">First Name:-</label>
+		    <input type="text"id="fname" name="fname" placeholder="First Name" required><br><br>
+		    <label for="lname">Last Name:-</label>
+		    <input type="text"id="lname" name="lname" placeholder="Last Name"><br><br>
+		    <label for="age">Age:-</label>
+		    <input type="decimal" id="age" name="age" placeholder="age" required><br><br>
+		    Address:-
+		    <textarea rows="5" cols="20" required>Enter Address!!</textarea><br><br>
+		     Gender:-
+		    <input type="radio" name="sex" value="male">
+		    <label>Male</label>
+		    <input type="radio" name="sex" value="female">
+		    <label>Female</label>
+		    <input type="radio" name="sex" value="Other">
+		    <label>Other</label>
+
+		
+		</fieldset><br><br>
+		Profession:-
+		<input list="Job" placeholder="Job"required>
+		<datalist id="Job">
+			<option value="G">Govt Job</option>
+			<option value="P">Private Job</option>
+			<option value="B">Buisness</option>
+			<option value="S">Service</option>
+		</datalist><br><br>
+		Mob No:-
+		<input type="text" name="country code" value="+91"size="2">
+		<input type="tel" name="phone" size="25" pattern="[0-9]{4}-[0-9]{6}" placeholder="1234-567890" required><br><br>
+		<label for="email">Email:-</label>
+		<input type="email" name="email" placeholder="Enter Email"required><br><br>
+		<label for="psswd">Password:-</label>
+		<input type="password" name="psswd"placeholder="Enter Password"required><br><br>
+		<label for="repeat">Re-type Password</label>
+		<input type="password" name="repeat"placeholder="Re-type Password" required=""><br><br>
+		<label>Upload photo:-</label>
+		<input type="file"><br><br>
+		<label>Upload marksheet:-</label>
+		<input type="file"><br><br>
+		<input type="checkbox" required>
+		<label>I ensure the above details are correct to my knowledge</label><br><br>
+		<button type="submit"class="registerbtn">Register</button>
+
+	</form>
+
+</body>
+</html>
