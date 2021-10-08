@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+ <meta charset="utf-8">
+ <title></title>
+ <style>
+ .odd{
+ background-color: #CC0000;
+ }
+ </style>
+ <script>
+ function check(str) {
+ var phrase = str;
+ var re = phrase.split('').reverse().join('');
+ return phrase === re;
+ }
+ function getdata() {
+ var phrase = document.getElementById('phrase').value;
+ var min = document.getElementById('min').value;
+ var max = document.getElementById('max').value;
+ if (max && !min) {
+ console.log('hello');
+ }
+ var ophrase = phrase.split(" ");
+ var phArray = phrase.toLowerCase().split(" ");
+ var count = 0;
+ var count_display = document.getElementById('count');
+ var palin = document.getElementById('palindromes');
+ for (var i=0; i<phArray.length; i++) {
+ if (min && !max){
+ if(min <= phArray[i].split('').length) {
+ var result = check(phArray[i]);
+ if (result) {
+ count = count + 1;
+ if(count % 2 == 0) {
+ palin.innerHTML += '<li>' + ophrase[i] + '</li
+>';
+ }
+ else{
+ palin.innerHTML += '<li class="odd">' + ophras
+e[i] + '</li>';
+ }
+ }
+ } 
+ }
+ else if (!min && max){
+ if(max >= phArray[i].split('').length) {
+ var result = check(phArray[i]);
+ if (result) {
+ count = count + 1;
+ if(count % 2 == 0) {
+ palin.innerHTML += '<li>' + ophrase[i] + '</li
+>';
+ }
+ else{
+ palin.innerHTML += '<li class="odd">' + ophras
+e[i] + '</li>';
+ }
+ }
+ }
+ }
+ else if (min && max){
+ if(min <= phArray[i].split('').length && max >= phArray[i]
+.split('').length) {
+ var result = check(phArray[i]);
+ if (result) {
+ count = count + 1;
+ if(count % 2 == 0) {
+ palin.innerHTML += '<li>' + ophrase[i] + '</li
+>';
+ }
+ else{
+ palin.innerHTML += '<li class="odd">' + ophras
+e[i] + '</li>';
+ }
+ }
+ }
+ }
+ else {
+ var result = check(phArray[i]);
+ if (result) {
+ count = count + 1;
+ if(count % 2 == 0) {
+ palin.innerHTML += '<li>' + ophrase[i] + '</li>';
+ }
+ else{
+ palin.innerHTML += '<li class="odd">' + ophrase[i]
++ '</li>';
+ } 
+ }
+ }
+ }
+ count_display.innerHTML = count + ' Palindromes';
+ }
+ </script>
+</head>
+<body>
+ <h1> Palindrome Finder! </h1>
+ <div> Phrase:<input id="phrase" type="text" size="70" /> </div>
+ <div> Length:<input id="min" type="text" size="2" /> to
+ <input id="max" type="text" size="2" /> </div>
+ <div> <button id="find" onclick="getdata()"> Find Palindromes </button> </
+div>
+ <ul id="palindromes"></ul>
+ <div id="count"></div>
+</body>
+</html>
